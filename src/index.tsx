@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App'
 
-ReactDOM.render(<h1>MegaCalculator!!!</h1>, document.querySelector('#react-app'));
+ReactDOM.render(<App/>, document.querySelector('#react-app'));
