@@ -3,7 +3,7 @@ import * as colors from '../../constants/colors';
 
 const StyledScreenBlock = styled.div`
   width: 90%;
-  height: 25%;
+  height: 20vh;
   border: 2px solid ${colors.black};
   border-radius: 1vh;
   margin-top: 1vh;
