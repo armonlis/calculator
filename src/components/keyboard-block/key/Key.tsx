@@ -1,9 +1,16 @@
 import StyledKey from "./style";
 
-const Key = (props: {keyValue: string, small?: boolean, onClick?: () => void }) => {
-  const {keyValue, small = false, onClick} = props;
+type Props = {
+  keyValue: string;
+  small?: boolean;
+  onClick?: () => void;
+  double?: boolean;
+}
+
+const Key = (props: Props) => {
+  const {keyValue, small = false, onClick, double = false} = props;
   return (
-    <StyledKey small={small} onClick={onClick} >
+    <StyledKey small={small} double={double} onClick={onClick} >
       <p>{keyValue}</p>
     </StyledKey>
   );
