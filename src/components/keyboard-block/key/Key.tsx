@@ -1,9 +1,10 @@
+import { SyntheticEvent } from "react";
 import StyledKey from "./style";
 
 type Props = {
   keyValue: string;
   small?: boolean;
-  onClick?: () => void;
+  onClick: () => void;
   double?: boolean;
 }
 
