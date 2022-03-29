@@ -1,19 +1,21 @@
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import StyledShell from "./style";
 import ScreenBlock from "../screen-block/Screen-block";
 import Keyboard from "../keyboard-block/KeyboardBlock";
-import { getResult } from "./functions";
+import { getResult, calculateResult } from "./functions";
 
 
 const Shell = () => {
-  let expression: string[] = [];
   const [result, setResult] = useState("0");
+  const [expression, setExpression] = useState([result]);
   const [power, setPower] = useState(false);
   
   function keyHandler(key: string) {
+    const [, action] = expression;
+
     switch (key) {
-      case "ON/OFF": setResult("0"); power ? setPower(false) : setPower(true); break;
-      case "AC": expression = []; setResult("0"); break;
+      case "ON/OFF": setResult("0"); setExpression([result]); power ? setPower(false) : setPower(true); break;
+      case "AC": setResult("0"); setExpression([result]); break;
       case "1": setResult(getResult(result, "1")); break;
       case "2": setResult(getResult(result, "2")); break;
       case "3": setResult(getResult(result, "3")); break;
@@ -24,6 +26,13 @@ const Shell = () => {
       case "8": setResult(getResult(result, "8")); break;
       case "9": setResult(getResult(result, "9")); break;
       case "0": setResult(getResult(result, "0")); break;
+      case "+": if (expression.length === 1) { setExpression([result, "+"]) } else { setExpression([calculateResult([...expression, result]), "+"]) }; 
+        setResult("0"); break;
+      case "-": if (expression.length === 1) { setExpression([result, "-"]) } else { setExpression([calculateResult([...expression, result]), "-"]) }; 
+      setResult("0"); break;
+      //case "X": 
+      //case "/": 
+      case "=": setExpression([calculateResult([...expression, result]), "="]); setResult(calculateResult([...expression, result])); break;
     };
   };
   

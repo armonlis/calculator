@@ -28,7 +28,7 @@ const Keyboard = (props: Props) => {
       <Key keyValue="/" onClick={() => handler("/")} />
       <Key keyValue="ON/OFF" small onClick={() => handler("ON/OFF")} />
       <Key keyValue="AC" onClick={() => handler("AC")} />
-      <Key keyValue="M" onClick={() => handler("M")} />
+      <Key keyValue="C" onClick={() => handler("M")} />
       <Key keyValue="=" onClick={() => handler("=")} />
     </StyledKeybord>   
   );
