@@ -11,7 +11,6 @@ const Shell = () => {
   const [power, setPower] = useState(false);
   
   function keyHandler(key: string) {
-    console.log("HANDLER>>>", expression);
     switch (key) {
       case "ON/OFF": setExpression(["0"]); setResult("0"); power ? setPower(false) : setPower(true); break;
       case "AC": setExpression(["0"]); setResult("0");  break;
@@ -30,11 +29,13 @@ const Shell = () => {
       case "+": if (expression.length === 1) { setExpression([result, "+"]) } else { setExpression([calculateResult([...expression, result]), "+"]) }; 
         setResult("0"); break;
       case "-": if (expression.length === 1) { setExpression([result, "-"]) } else { setExpression([calculateResult([...expression, result]), "-"]) }; 
-      setResult("0"); break;
+        setResult("0"); break;
       case "X": if (expression.length === 1) { setExpression([result, "X"]) } else { setExpression([calculateResult([...expression, result]), "X"]) }; 
-      setResult("0"); break;
+        setResult("0"); break;
       case "/": if (expression.length === 1) { setExpression([result, "/"]) } else { setExpression([calculateResult([...expression, result]), "/"]) }; 
-      setResult("0"); break;
+        setResult("0"); break;
+      case "%": if (expression.length === 1) { break } else { setExpression([calculateResult([...expression, result, "%"])]) }; 
+        setResult(calculateResult([...expression, result, "%"])); break;
       case "=": setExpression([calculateResult([...expression, result])]); setResult(calculateResult([...expression, result])); break; 
     };
   };
