@@ -32,7 +32,7 @@ const Shell = () => {
       setResult("0"); break;
       //case "X": 
       //case "/": 
-      //case "=": 
+      case "=": setExpression([calculateResult([...expression, result])]); setResult(calculateResult([...expression, result])); break; 
     };
   };
   

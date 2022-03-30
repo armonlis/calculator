@@ -8,8 +8,8 @@ export function calculateResult(expression: string[]): string {
   const action = expression.length === 2 ? "+" : expression[1];
   let result: string = "0";
   switch (action) {
-    case "+": result = String(+num1 + +num2); break;
-    case "-": result = String(+num1 - +num2); break;
+    case "+": result = String(+num1 + +num2).slice(0, 10); break;
+    case "-": result = String(+num1 - +num2).slice(0, 10); break;
   };
   return result;
 };
