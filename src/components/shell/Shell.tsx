@@ -15,6 +15,7 @@ const Shell = () => {
     switch (key) {
       case "ON/OFF": setExpression(["0"]); setResult("0"); power ? setPower(false) : setPower(true); break;
       case "AC": setExpression(["0"]); setResult("0");  break;
+      case "C": setExpression([...expression].slice(0, 2)); setResult("0");  break;
       case "1": setResult(getResult(result, "1")); break;
       case "2": setResult(getResult(result, "2")); break;
       case "3": setResult(getResult(result, "3")); break;
