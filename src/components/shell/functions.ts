@@ -10,6 +10,8 @@ export function calculateResult(expression: string[]): string {
   switch (action) {
     case "+": result = String(+num1 + +num2).slice(0, 10); break;
     case "-": result = String(+num1 - +num2).slice(0, 10); break;
+    case "X": result = String(+num1 * +num2).slice(0, 10); break;
+    case "/": result = String(+num1 / +num2).slice(0, 10); break;
   };
   return result;
 };

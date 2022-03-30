@@ -30,8 +30,10 @@ const Shell = () => {
         setResult("0"); break;
       case "-": if (expression.length === 1) { setExpression([result, "-"]) } else { setExpression([calculateResult([...expression, result]), "-"]) }; 
       setResult("0"); break;
-      //case "X": 
-      //case "/": 
+      case "X": if (expression.length === 1) { setExpression([result, "X"]) } else { setExpression([calculateResult([...expression, result]), "X"]) }; 
+      setResult("0"); break;
+      case "/": if (expression.length === 1) { setExpression([result, "/"]) } else { setExpression([calculateResult([...expression, result]), "/"]) }; 
+      setResult("0"); break;
       case "=": setExpression([calculateResult([...expression, result])]); setResult(calculateResult([...expression, result])); break; 
     };
   };
