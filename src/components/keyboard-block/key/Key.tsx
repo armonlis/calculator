@@ -1,4 +1,3 @@
-import { SyntheticEvent } from "react";
 import StyledKey from "./style";
 
 type Props = {

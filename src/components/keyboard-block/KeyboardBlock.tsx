@@ -1,6 +1,5 @@
 import StyledKeybord from "./style";
 import Key from "./key/Key";
-import { SyntheticEvent } from "react";
 
 type Props = {
   handler: (key: string) => void;
