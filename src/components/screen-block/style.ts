@@ -8,7 +8,7 @@ const StyledScreenBlock = styled.div`
   border-radius: 1vh;
   margin-top: 1vh;
   position: relative;
-    .screen-block-name {
+    #screen-block-name {
       position: absolute;
       top: 0;
       right: 2vh;
@@ -19,7 +19,18 @@ const StyledScreenBlock = styled.div`
       padding: 5px;
       font-size: 1.5vh;
       line-height: 1.5vh;
-    }
+    };
+    #screen-block-digits {
+      position: absolute;
+      display: block;
+      bottom: 1vh;
+      left: 2vh;
+      font-weight: bold;
+      margin: 0;
+      padding: 5px;
+      font-size: 2vh;
+      line-height: 2vh;
+    };
 `;
 
 export default StyledScreenBlock;
